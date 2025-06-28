@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Characteristics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Speech Characteristics</h1>
+        <p>Welcome to our research study investigating speech characteristics in adults. Your participation is greatly appreciated and contributes to valuable research in this field. Please read through the information carefully and complete all sections.</p>
+
+        <div id="consent-section" class="study-section">
+            <h2>1. Informed Consent</h2>
+            <p>Please read the following information carefully. By proceeding, you confirm your understanding and agreement to participate.</p>
+
+            <h3>Study Title: Speech Characteristics in Adults</h3>
+
+            <h3>Purpose of the Research:</h3>
+            <p>This study aims to investigate differences and similarities in speech characteristics among adults. By analyzing various aspects of spoken language, we hope to gain a better understanding of speech patterns and to develop potential objective measures for research purposes.</p>
+
+            <h3>What You Will Be Asked to Do:</h3>
+            <ul>
+                <li>Complete a short demographic and background survey.</li>
+                <li>Perform three short speech tasks:</li> <ul>
+                    <li>Reading a brief passage aloud.</li>
+                    <li>Describing a picture for approximately one minute.</li>
+                    <li>Speaking freely about something memorable you did recently.</li>
+                </ul>
+                <li>Your speech will be audio-recorded during these tasks. You will have the opportunity to listen back to your recordings and retake them before submitting.</li>
+            </ul>
+
+            <h3>Time Commitment:</h3>
+            <p>The entire study is expected to take approximately 10-15 minutes.</p>
+
+            <h3>Confidentiality and Data Management:</h3>
+            <ul>
+                <li>All data collected, including audio recordings and survey responses, will be treated with strict confidentiality.</li>
+                <li>Your data will be pseudo-anonymised, meaning it will be assigned a unique code and stored separately from any personal identifying information (e.g., your Prolific ID).</li>
+                <li>Raw audio files will be stored securely on encrypted servers accessible only by the research team for a period of up to 1 year, as per institutional data retention policies, in full compliance with UK data protection laws. Your recordings will only be accessed and listened to by the researcher and will not be shared, redistributed, or sold to any third parties.</li>
+                <li>Your aggregated, de-identified data may be used in future research studies, published in scientific journals, or presented at academic conferences. Individual data will never be identifiable in any public dissemination.</li>
+            </ul>
+
+            <h3>Voluntary Participation and Right to Withdraw:</h3>
+            <p>Participation in this study is entirely voluntary. You are free to decline to participate, or to withdraw from the study at any time, for any reason, without penalty. If you withdraw, any data collected from you (if not yet processed for analysis) will be destroyed.</p>
+            <p>You may request the deletion of your data within 10 days of submission by contacting the researcher via Prolific or by email at gian.jaeger@wolfson.ox.ac.uk. Data will be securely destroyed upon request.</p>
+
+            <label>
+                <input type="checkbox" id="consentCheckbox">
+                I have read and understood the information provided in this consent form, and I agree to voluntarily participate in this study.
+            </label>
+            <br>
+            <button id="startSurveyButton" disabled>Continue to Survey</button>
+            <p id="consentStatus" class="status-message"></p>
+        </div>
+
+        <div id="demographics-section" class="study-section">
+            <h2>2. Demographic and Background Survey</h2>
+            <p>Please answer the following questions. All information will be kept confidential.</p>
+            <form id="demographicsForm">
+                <label for="fullName">First and last name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+
+                <label for="age">Age (in years):</label>
+                <input type="number" id="age" name="age" min="18" required>
+
+                <label for="gender">Gender Identity:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select...</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="non-binary">Non-binary</option>
+                    <option value="prefer-not-say">Prefer not to say</option>
+                    <option value="other">Other (please specify)</option>
+                </select>
+                <input type="text" id="gender_other" name="gender_other" placeholder="Please specify your gender identity" style="display:none; margin-top: 5px;">
+
+                <label for="ethnicity">Which of these best describes your ethnicity?</label>
+                <select id="ethnicity" name="ethnicity" required>
+                    <option value="">Select...</option>
+                    <option value="white">White</option>
+                    <option value="black_african_caribbean_black_british">Black / African / Caribbean / Black British</option>
+                    <option value="asian_asian_british">Asian / Asian British</option>
+                    <option value="mixed_multiple_ethnic_groups">Mixed / Multiple ethnic groups</option>
+                    <option value="other">Other (please specify)</option>
+                    <option value="prefer_not_disclose">Prefer not to disclose</option>
+                </select>
+                <input type="text" id="ethnicity_other" name="ethnicity_other" placeholder="Please specify your ethnicity" style="display:none; margin-top: 5px;">
+
+
+                <label for="state">Current State of Residence (US only):</label>
+                <input type="text" id="state" name="state" placeholder="e.g., California, New York" required>
+
+                <label for="firstLanguage">First Language:</label>
+                <input type="text" id="firstLanguage" name="firstLanguage" placeholder="e.g., English, Spanish, Mandarin" required>
+
+                <label for="device">Device Used for Recording:</label>
+                <select id="device" name="device" required>
+                    <option value="">Select...</option>
+                    <option value="laptop_builtin">Laptop/Desktop (built-in microphone)</option>
+                    <option value="laptop_external">Laptop/Desktop (external microphone)</option>
+                    <option value="other">Other (please specify)</option>
+                </select>
+                <input type="text" id="device_other" name="device_other" placeholder="Please specify your device" style="display:none; margin-top: 5px;">
+
+
+                <label for="deviceModel">Please specify the exact model of your device:</label>
+                <input type="text" id="deviceModel" name="deviceModel" placeholder="e.g., MacBook Pro 2020, Dell XPS 15 9500" required>
+                <p style="font-size: 0.9em; color: #666; margin-top: -10px; margin-bottom: 20px;">
+                    <a href="#footnote-devicemodel" id="footnote-devicemodel-link">How to find your device model</a>
+                </p>
+
+
+                <label for="environment">Recording Environment:</label>
+                <select id="environment" name="environment" required>
+                    <option value="">Select...</option>
+                    <option value="quiet_home">Quiet home environment</option>
+                    <option value="noisy_home">Slightly noisy home environment</option>
+                    <option value="public">Public place (e.g., cafe, library)</option>
+                    <option value="outdoor">Outdoor environment</option>
+                    <option value="other">Other (please specify)</option>
+                </select>
+                <input type="text" id="environment_other" name="environment_other" placeholder="Please specify your environment" style="display:none; margin-top: 5px;">
+
+                <label for="coOccurringConditions">Please list any co-occurring conditions (e.g., ADHD, anxiety, depression, dyslexia, etc. if applicable):</label>
+                <textarea id="coOccurringConditions" name="coOccurringConditions" rows="3" placeholder="e.g., ADHD, Generalized Anxiety Disorder"></textarea>
+
+                <button type="submit" id="submitSurveyButton">Submit and continue to task</button>
+                <p id="surveyStatus" class="status-message"></p>
+            </form>
+
+            <p id="footnote-devicemodel" style="font-size: 0.9em; color: #666; margin-top: 30px;">
+                <strong>How to find your device model:</strong><br>
+                <strong>For Mac:</strong> Click the Apple icon () in the top-left corner, then "About This Mac".<br>
+                <strong>For Windows:</strong> Press `Windows + R`, type `dxdiag` in the Run dialog, and press Enter. Look for "System Manufacturer" and "System Model".
+            </p>
+        </div>
+
+        <div id="reading-section" class="study-section">
+            <h2>Speech Task 1/3: Reading Passage</h2>
+            <div class="task-instructions">
+                <h3>Instructions:</h3>
+                <p>Please click "Start Recording" and then read the following short passage aloud clearly and at a natural pace. When you are finished reading, click "Stop Recording". You can click "Start Recording" again to re-record if needed. Once satisfied, click "Upload & Continue".</p>
+                <p>Please ensure you are in a quiet environment.</p>
+            </div>
+            <div class="reading-passage">
+                <p><strong>The Rainbow Passage</strong></p>
+                <p>When the sunlight strikes raindrops in the air, they act as a prism and form a rainbow. The rainbow is a division of white light into many beautiful colors. These take the shape of a long round arch, with its path high above, and its two ends apparently beyond the horizon. There is , according to legend, a boiling pot of gold at one end. People look, but no one ever finds it. When a man looks for something beyond his reach, his friends say he is looking for the pot of gold at the end of the rainbow. Throughout the centuries people have explained the rainbow in various ways. Some have accepted it as a miracle without physical explanation.</p>
+            </div>
+            <button id="startButton_reading">Start Recording</button>
+            <button id="stopButton_reading" disabled>Stop Recording</button>
+            <p id="status_reading" class="status-message">Ready for reading task.</p>
+            <p id="timerDisplay_reading">00:00</p>
+            <audio id="audioPlayback_reading" controls style="display: none;"></audio>
+            <button id="uploadNextButton_reading" style="display: none;">Upload & Continue</button>
+        </div>
+
+        <div id="picture-description-section" class="study-section">
+            <h2>Speech Task 2/3: Picture Description</h2>
+            <div class="task-instructions">
+                <h3>Instructions:</h3>
+                <p>Please click "Start Recording" and describe the image below for approximately <strong>one minute</strong>. Describe what you see in the picture, what might be happening, or any thoughts it provokes. Try to speak continuously and naturally.</p>
+                <p>A timer will show your progress. Your recording must be at least 50 seconds long to be uploaded. Click "Stop Recording" when you are finished.</p>
+                <p>Listen to your recording to ensure you are happy with it. You can click "Start Recording" again to re-record if needed. Once satisfied, click "Upload & Continue".</p>
+                <p>Please ensure you are in a quiet environment.</p>
+            </div>
+
+            <img id="descriptionImage" src="CookieTheft.png" alt="Image to describe" style="max-width: 100%; height: auto; margin: 20px auto; display: block; border: 1px solid #ddd; padding: 5px;">
+            <p style="font-size: 0.8em; text-align: center; color: #666; margin-top: 5px;">Image &copy; Miro Inc. Used with permission for research purposes.</p>
+
+            <button id="startButton_pictureDescription">Start Recording</button>
+            <button id="stopButton_pictureDescription" disabled>Stop Recording</button>
+            <p id="status_pictureDescription" class="status-message">Ready for picture description task.</p>
+            <p id="timerDisplay_pictureDescription">00:00</p>
+            <audio id="audioPlayback_pictureDescription" controls style="display: none;"></audio>
+            <button id="uploadNextButton_pictureDescription" style="display: none;">Upload & Continue</button>
+        </div>
+
+        <div id="free-speech-section" class="study-section"> 
+            <h2>Speech Task 3/3: Free Speech</h2>
+            <div class="task-instructions">
+                <h3>Instructions:</h3>
+                <p>Please click "Start Recording" and talk for **at least 90 seconds** about something memorable you did recently (e.g. last weekend). What happened, and how did you feel about it?</p>
+                <p>Try to speak continuously and naturally, as if talking to a friend. A timer will show your progress. Click "Stop Recording" when you are finished.</p>
+                <p>Listen to your recording to ensure you are happy with it. You can click "Start Recording" again to re-record if needed. Once satisfied, click "Upload & Continue".</p>
+                <p>Please ensure you are in a quiet environment.</p>
+            </div>
+            <button id="startButton_freeSpeech">Start Recording</button>
+            <button id="stopButton_freeSpeech" disabled>Stop Recording</button>
+            <p id="status_freeSpeech" class="status-message">Ready for free speech task.</p>
+            <p id="timerDisplay_freeSpeech">00:00</p>
+            <audio id="audioPlayback_freeSpeech" controls style="display: none;"></audio>
+            <button id="uploadNextButton_freeSpeech" style="display: none;">Upload & Continue</button>
+        </div>
+
+        <div id="completion-section" class="study-section">
+            <h2>6. Study Complete!</h2> 
+            <p>Thank you for participating in our study! Your contribution is invaluable to our research.</p>
+            <p>Please copy the completion code below and paste it back into Prolific to receive your payment.</p>
+            <p><strong>Your Completion Code:</strong></p>
+            <span id="completionCode"></span>
+            <p>You can now close this tab.</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
